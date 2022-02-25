@@ -1,0 +1,7 @@
+arrow size: 128 x 128 px
+screen size: 1280 x 720 px
+arrow board size: 640 x 720 px
+large button size: 368 x 86 px
+small button size: 168 x 66 px
+title: 640 x 180 px
+other title: 640 x 140 px
