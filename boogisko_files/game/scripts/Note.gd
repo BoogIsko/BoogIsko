@@ -32,3 +32,6 @@ func initialize(lane):
 	if lane == 3:
 		$AnimatedSprite.frame = 3
 		position = RIGHT_SPAWN
+
+func destroy():
+	$AnimatedSprite.visible = false

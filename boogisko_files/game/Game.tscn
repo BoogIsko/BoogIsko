@@ -71,3 +71,10 @@ frames = SubResource( 3 )
 [node name="RightButton" parent="." instance=ExtResource( 4 )]
 position = Vector2( 843, 630 )
 frames = SubResource( 4 )
+
+[node name="Score" type="Label" parent="."]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 44.0
+margin_bottom = 18.0
+text = "0"

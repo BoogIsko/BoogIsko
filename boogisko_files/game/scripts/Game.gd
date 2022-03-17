@@ -18,3 +18,7 @@ func _spawn_notes():
 	instance = note.instance()
 	instance.initialize(lane)
 	add_child(instance)
+
+func increment_score(weight):
+	score += weight
+	$Score.text = str(score)
