@@ -1,0 +1,10 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://main_menu/buttons/select_music_btn.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/pause_buttons/quit_btn(active).png" type="Texture" id=2]
+[ext_resource path="res://assets/pause_buttons/quit_btn.png" type="Texture" id=3]
+
+[node name="Quit" instance=ExtResource( 1 )]
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 2 )
+texture_hover = ExtResource( 2 )

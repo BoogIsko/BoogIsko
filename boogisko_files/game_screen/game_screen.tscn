@@ -1,0 +1,78 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets_new/game_screen/bg.png" type="Texture" id=1]
+[ext_resource path="res://game_screen/scripts/game_screen.gd" type="Script" id=2]
+[ext_resource path="res://game_screen/scripts/pause_menu.gd" type="Script" id=3]
+[ext_resource path="res://assets/main/game_paused.png" type="Texture" id=4]
+[ext_resource path="res://game_screen/buttons/restart_btn.tscn" type="PackedScene" id=5]
+[ext_resource path="res://game_screen/buttons/resume_btn.tscn" type="PackedScene" id=6]
+[ext_resource path="res://game_screen/buttons/quit_btn.tscn" type="PackedScene" id=7]
+
+[node name="GameScreen" type="Node"]
+script = ExtResource( 2 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PauseLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="Pause" type="Control" parent="PauseLayer"]
+pause_mode = 2
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DarkOverlay" type="ColorRect" parent="PauseLayer/Pause"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.12549, 0.12549, 0.12549, 0.85098 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PauseTitle" type="TextureRect" parent="PauseLayer/Pause"]
+margin_left = 331.0
+margin_top = 55.0
+margin_right = 971.0
+margin_bottom = 195.0
+texture = ExtResource( 4 )
+
+[node name="Buttons" type="VBoxContainer" parent="PauseLayer/Pause"]
+margin_left = 469.0
+margin_top = 245.0
+margin_right = 837.0
+margin_bottom = 583.0
+custom_constants/separation = 40
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Resume" parent="PauseLayer/Pause/Buttons" instance=ExtResource( 6 )]
+margin_left = 0.0
+margin_right = 368.0
+
+[node name="Restart" parent="PauseLayer/Pause/Buttons" instance=ExtResource( 5 )]
+margin_left = 0.0
+margin_top = 126.0
+margin_right = 368.0
+margin_bottom = 212.0
+
+[node name="Quit" parent="PauseLayer/Pause/Buttons" instance=ExtResource( 7 )]
+margin_left = 0.0
+margin_top = 252.0
+margin_right = 368.0
+margin_bottom = 338.0
+
+[connection signal="pressed" from="PauseLayer/Pause/Buttons/Resume" to="PauseLayer/Pause" method="_on_Resume_pressed"]
+[connection signal="pressed" from="PauseLayer/Pause/Buttons/Quit" to="PauseLayer/Pause" method="_on_Quit_pressed"]
