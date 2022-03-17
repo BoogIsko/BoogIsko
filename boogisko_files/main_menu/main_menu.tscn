@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://main_menu/buttons/select_music_btn.tscn" type="PackedScene" id=1]
-[ext_resource path="res://assets/main/filler_bg.png" type="Texture" id=2]
-[ext_resource path="res://assets/main/title.png" type="Texture" id=3]
+[ext_resource path="res://assets_new/main_menu/mainmenu_bg.png" type="Texture" id=2]
+[ext_resource path="res://assets_new/main_menu/logo.png" type="Texture" id=3]
 [ext_resource path="res://main_menu/buttons/exit_btn.tscn" type="PackedScene" id=4]
 [ext_resource path="res://main_menu/buttons/view_score_btn.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/others/m04b.TTF" type="DynamicFontData" id=6]
@@ -30,39 +30,43 @@ __meta__ = {
 
 [node name="MainMenuElements" type="VBoxContainer" parent="."]
 margin_left = 120.0
-margin_top = 30.0
-margin_right = 1160.0
-margin_bottom = 680.0
+margin_top = 94.0
+margin_right = 1178.0
+margin_bottom = 744.0
 custom_constants/separation = 62
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Logo" type="TextureRect" parent="MainMenuElements"]
-margin_right = 1040.0
-margin_bottom = 180.0
+margin_right = 1058.0
+margin_bottom = 122.0
 texture = ExtResource( 3 )
 stretch_mode = 4
 
 [node name="Buttons" type="VBoxContainer" parent="MainMenuElements"]
-margin_top = 242.0
-margin_right = 1040.0
-margin_bottom = 580.0
+margin_top = 184.0
+margin_right = 1058.0
+margin_bottom = 360.0
 custom_constants/separation = 40
 alignment = 1
 
 [node name="SelectMusic" parent="MainMenuElements/Buttons" instance=ExtResource( 1 )]
-margin_right = 704.0
+margin_left = 462.0
+margin_right = 596.0
+margin_bottom = 32.0
 
 [node name="ViewScore" parent="MainMenuElements/Buttons" instance=ExtResource( 5 )]
-margin_top = 126.0
-margin_right = 704.0
-margin_bottom = 212.0
+margin_left = 369.0
+margin_top = 72.0
+margin_right = 689.0
+margin_bottom = 104.0
 
 [node name="Exit" parent="MainMenuElements/Buttons" instance=ExtResource( 4 )]
-margin_top = 252.0
-margin_right = 704.0
-margin_bottom = 338.0
+margin_left = 468.0
+margin_top = 144.0
+margin_right = 590.0
+margin_bottom = 176.0
 
 [node name="Label" type="Label" parent="."]
 margin_left = 60.0

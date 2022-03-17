@@ -5,3 +5,4 @@ large button size: 368 x 86 px
 small button size: 168 x 66 px
 title: 640 x 180 px
 other title: 640 x 140 px
+character(menu): 190 x 190 px

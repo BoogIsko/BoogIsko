@@ -1,5 +1,10 @@
 extends Control
 
+func _ready():
+	get_tree().paused = false
+	PlayerData.difficulty = "none"
+	PlayerData.character = "none"
+
 func _on_Exit_pressed():
 	get_tree().quit()
 
