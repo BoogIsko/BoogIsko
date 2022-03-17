@@ -16,7 +16,7 @@ animations = [ {
 
 [sub_resource type="RectangleShape2D" id=2]
 
-[node name="Note" type="Area2D"]
+[node name="Note" type="Area2D" groups=["note"]]
 script = ExtResource( 5 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
