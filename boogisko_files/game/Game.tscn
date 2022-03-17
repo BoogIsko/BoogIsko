@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/Game Screen/arrow_panel.png" type="Texture" id=1]
+[ext_resource path="res://game/scripts/Game.gd" type="Script" id=2]
+
+[node name="Game" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 633, 362 )
+texture = ExtResource( 1 )
