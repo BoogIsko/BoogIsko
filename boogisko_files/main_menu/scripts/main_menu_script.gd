@@ -4,6 +4,7 @@ func _ready():
 	get_tree().paused = false
 	PlayerData.difficulty = "none"
 	PlayerData.character = "none"
+	PlayerData.song = "none"
 
 func _on_Exit_pressed():
 	get_tree().quit()

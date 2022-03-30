@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Sunny.mp3-d9be38d32ef329b69cda9d1373db7319.mp3str"
+
+[deps]
+
+source_file="res://Music/Sunny.mp3"
+dest_files=[ "res://.import/Sunny.mp3-d9be38d32ef329b69cda9d1373db7319.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

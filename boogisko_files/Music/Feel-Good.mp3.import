@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Feel-Good.mp3-02ce0548d7a78c298cd2fff51ee9e848.mp3str"
+
+[deps]
+
+source_file="res://Music/Feel-Good.mp3"
+dest_files=[ "res://.import/Feel-Good.mp3-02ce0548d7a78c298cd2fff51ee9e848.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

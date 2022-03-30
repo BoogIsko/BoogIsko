@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Surf.mp3-68dd57b4f309d87f4106a2231e6b4fd8.mp3str"
+
+[deps]
+
+source_file="res://Music/Surf.mp3"
+dest_files=[ "res://.import/Surf.mp3-68dd57b4f309d87f4106a2231e6b4fd8.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

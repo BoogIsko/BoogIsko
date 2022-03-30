@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Upbeat-Forever.mp3-9fbdfec8aa7a37a805df0c66af0d4879.mp3str"
+
+[deps]
+
+source_file="res://Music/Upbeat-Forever.mp3"
+dest_files=[ "res://.import/Upbeat-Forever.mp3-9fbdfec8aa7a37a805df0c66af0d4879.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

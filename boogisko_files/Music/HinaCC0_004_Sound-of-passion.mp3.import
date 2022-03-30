@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/HinaCC0_004_Sound-of-passion.mp3-7513328653954f12ea5260c4ed947142.mp3str"
+
+[deps]
+
+source_file="res://Music/HinaCC0_004_Sound-of-passion.mp3"
+dest_files=[ "res://.import/HinaCC0_004_Sound-of-passion.mp3-7513328653954f12ea5260c4ed947142.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

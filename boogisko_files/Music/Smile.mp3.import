@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Smile.mp3-29ab7bd9738bc322dbdd8b916e4bb62e.mp3str"
+
+[deps]
+
+source_file="res://Music/Smile.mp3"
+dest_files=[ "res://.import/Smile.mp3-29ab7bd9738bc322dbdd8b916e4bb62e.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

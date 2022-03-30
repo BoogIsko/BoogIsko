@@ -1,18 +1,28 @@
 extends Area2D
 
 const SPAWN_Y = -20
+const TARGET_Y = 631
+const DIST_TO_TARGET = TARGET_Y - SPAWN_Y
+
 const LEFT_SPAWN = Vector2(424, SPAWN_Y)
 const UP_SPAWN = Vector2(567, SPAWN_Y)
 const DOWN_SPAWN = Vector2(701, SPAWN_Y)
 const RIGHT_SPAWN = Vector2(842, SPAWN_Y)
 
-var velocity = Vector2(0.0, 400.0)
+var velocity = Vector2(0.0, 360.0)
+var label_vel = Vector2(0.0, 100.0)
+var hit = false
 
 func _ready() -> void:
 	pass
 
 func _physics_process(delta: float) -> void:
-	self.translate(velocity * delta)
+	if !hit:
+		self.translate(velocity * delta)
+		if position.y > 690:
+			queue_free()
+	else:
+		$Node2D.translate(-label_vel * delta)
 
 
 func initialize(lane):
@@ -32,6 +42,19 @@ func initialize(lane):
 	if lane == 3:
 		$AnimatedSprite.frame = 3
 		position = RIGHT_SPAWN
+		
 
-func destroy():
+func destroy(score):
 	$AnimatedSprite.visible = false
+	$Timer.start()
+	hit = true
+	if score == 3:
+		$Node2D/Status.text = "PERFECT"
+	elif score == 2:
+		$Node2D/Status.text = "GOOD"
+	elif score == 1:
+		$Node2D/Status.text = "OKAY"
+
+
+func _on_Timer_timeout():
+	queue_free()

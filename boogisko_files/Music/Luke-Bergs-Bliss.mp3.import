@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Luke-Bergs-Bliss.mp3-d7a96e0eb557c77d28a8c2808af337e9.mp3str"
+
+[deps]
+
+source_file="res://Music/Luke-Bergs-Bliss.mp3"
+dest_files=[ "res://.import/Luke-Bergs-Bliss.mp3-d7a96e0eb557c77d28a8c2808af337e9.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

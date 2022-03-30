@@ -1,0 +1,10 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/main_buttons/smile_btn.png" type="Texture" id=1]
+[ext_resource path="res://assets/main_buttons/smile_btn(active).png" type="Texture" id=2]
+[ext_resource path="res://game_screen/buttons/resume_btn.tscn" type="PackedScene" id=3]
+
+[node name="Resume" instance=ExtResource( 3 )]
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 2 )
+texture_hover = ExtResource( 2 )
