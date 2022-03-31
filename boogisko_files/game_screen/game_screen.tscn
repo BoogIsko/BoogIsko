@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://assets_new/game_screen/bg.png" type="Texture" id=1]
 [ext_resource path="res://game_screen/scripts/game_screen.gd" type="Script" id=2]
@@ -25,6 +25,42 @@
 [ext_resource path="res://Music/Smile.mp3" type="AudioStream" id=23]
 [ext_resource path="res://game_screen/scripts/Conductor3.gd" type="Script" id=24]
 [ext_resource path="res://Music/Luke-Bergs-Bliss.mp3" type="AudioStream" id=25]
+[ext_resource path="res://assets_new/character/male/PressDown.png" type="Texture" id=26]
+[ext_resource path="res://assets_new/character/male/PressRight.png" type="Texture" id=27]
+[ext_resource path="res://assets_new/character/male/PressLeft.png" type="Texture" id=28]
+[ext_resource path="res://assets_new/character/male/PressUp.png" type="Texture" id=29]
+[ext_resource path="res://assets_new/character/male/Rest.png" type="Texture" id=30]
+[ext_resource path="res://game_screen/Character.gd" type="Script" id=31]
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ ExtResource( 28 ) ],
+"loop": true,
+"name": "left",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 27 ) ],
+"loop": true,
+"name": "right",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 29 ) ],
+"loop": true,
+"name": "up",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 30 ) ],
+"loop": true,
+"name": "rest",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 26 ) ],
+"loop": true,
+"name": "down",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=7]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -71,6 +107,18 @@ script = ExtResource( 8 )
 position = Vector2( 640.5, 361 )
 texture = ExtResource( 1 )
 
+[node name="KinematicBody2D" type="KinematicBody2D" parent="Game"]
+script = ExtResource( 31 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Game/KinematicBody2D"]
+position = Vector2( 1116, 389 )
+frames = SubResource( 6 )
+animation = "right"
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Game/KinematicBody2D"]
+shape = SubResource( 7 )
+
 [node name="Sprite" type="Sprite" parent="Game"]
 position = Vector2( 630.5, 363 )
 texture = ExtResource( 13 )
@@ -104,9 +152,6 @@ rect_scale = Vector2( 3, 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 5 )
 text = "0"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Conductor1" parent="Game" instance=ExtResource( 20 )]
 stream = ExtResource( 21 )
