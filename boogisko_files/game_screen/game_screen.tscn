@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://assets_new/game_screen/bg.png" type="Texture" id=1]
 [ext_resource path="res://game_screen/scripts/game_screen.gd" type="Script" id=2]
@@ -25,42 +25,10 @@
 [ext_resource path="res://Music/Smile.mp3" type="AudioStream" id=23]
 [ext_resource path="res://game_screen/scripts/Conductor3.gd" type="Script" id=24]
 [ext_resource path="res://Music/Luke-Bergs-Bliss.mp3" type="AudioStream" id=25]
-[ext_resource path="res://assets_new/character/male/PressDown.png" type="Texture" id=26]
-[ext_resource path="res://assets_new/character/male/PressRight.png" type="Texture" id=27]
-[ext_resource path="res://assets_new/character/male/PressLeft.png" type="Texture" id=28]
-[ext_resource path="res://assets_new/character/male/PressUp.png" type="Texture" id=29]
-[ext_resource path="res://assets_new/character/male/Rest.png" type="Texture" id=30]
-[ext_resource path="res://game_screen/Character.gd" type="Script" id=31]
-
-[sub_resource type="SpriteFrames" id=6]
-animations = [ {
-"frames": [ ExtResource( 28 ) ],
-"loop": true,
-"name": "left",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 27 ) ],
-"loop": true,
-"name": "right",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 29 ) ],
-"loop": true,
-"name": "up",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 30 ) ],
-"loop": true,
-"name": "rest",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 26 ) ],
-"loop": true,
-"name": "down",
-"speed": 5.0
-} ]
-
-[sub_resource type="RectangleShape2D" id=7]
+[ext_resource path="res://assets_new/game_screen/4_game_screen_2-01.png" type="Texture" id=26]
+[ext_resource path="res://assets_new/game_screen/spotlights.png" type="Texture" id=27]
+[ext_resource path="res://assets_new/game_screen/discoball.png" type="Texture" id=28]
+[ext_resource path="res://game/Char.tscn" type="PackedScene" id=29]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -107,51 +75,47 @@ script = ExtResource( 8 )
 position = Vector2( 640.5, 361 )
 texture = ExtResource( 1 )
 
-[node name="KinematicBody2D" type="KinematicBody2D" parent="Game"]
-script = ExtResource( 31 )
+[node name="BG REFERENCE" type="TextureRect" parent="Game"]
+visible = false
+margin_right = 1280.0
+margin_bottom = 720.0
+texture = ExtResource( 26 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Game/KinematicBody2D"]
-position = Vector2( 1116, 389 )
-frames = SubResource( 6 )
-animation = "right"
-playing = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Game/KinematicBody2D"]
-shape = SubResource( 7 )
-
-[node name="Sprite" type="Sprite" parent="Game"]
-position = Vector2( 630.5, 363 )
+[node name="Lanes" type="Sprite" parent="Game"]
+position = Vector2( 372.5, 363 )
 texture = ExtResource( 13 )
 
 [node name="UpButton" parent="Game" instance=ExtResource( 9 )]
-position = Vector2( 562.5, 632 )
+position = Vector2( 304.5, 632 )
 frames = SubResource( 1 )
 input = "ui_up"
 
 [node name="LeftButton" parent="Game" instance=ExtResource( 9 )]
-position = Vector2( 423.5, 631 )
+position = Vector2( 164.5, 631 )
 frames = SubResource( 2 )
 input = "ui_left"
 
 [node name="DownButton" parent="Game" instance=ExtResource( 9 )]
-position = Vector2( 702.5, 632 )
+position = Vector2( 443.5, 632 )
 frames = SubResource( 3 )
 input = "ui_down"
 
 [node name="RightButton" parent="Game" instance=ExtResource( 9 )]
-position = Vector2( 840.5, 631 )
+position = Vector2( 581.5, 631 )
 frames = SubResource( 4 )
 input = "ui_right"
 
 [node name="Score" type="Label" parent="Game"]
-margin_left = 19.5
-margin_top = 14.0
-margin_right = 59.5
-margin_bottom = 30.0
+margin_left = 892.5
+margin_top = 289.0
+margin_right = 932.5
+margin_bottom = 305.0
 rect_scale = Vector2( 3, 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 5 )
 text = "0"
+align = 1
 
 [node name="Conductor1" parent="Game" instance=ExtResource( 20 )]
 stream = ExtResource( 21 )
@@ -163,6 +127,20 @@ script = ExtResource( 22 )
 [node name="Conductor3" parent="Game" instance=ExtResource( 20 )]
 stream = ExtResource( 25 )
 script = ExtResource( 24 )
+
+[node name="Spotlights" type="TextureRect" parent="Game"]
+margin_left = 17.0
+margin_top = -168.0
+margin_right = 760.0
+margin_bottom = 163.0
+texture = ExtResource( 27 )
+
+[node name="DiscoBall" type="TextureRect" parent="Game"]
+margin_left = 808.0
+margin_top = -2.0
+margin_right = 1088.0
+margin_bottom = 277.0
+texture = ExtResource( 28 )
 
 [node name="PauseLayer" type="CanvasLayer" parent="."]
 layer = 2
@@ -218,6 +196,9 @@ margin_left = 0.0
 margin_top = 252.0
 margin_right = 368.0
 margin_bottom = 338.0
+
+[node name="Char" parent="." instance=ExtResource( 29 )]
+position = Vector2( -99, 28 )
 
 [connection signal="beat" from="Game/Conductor1" to="Game" method="_on_Conductor1_beat"]
 [connection signal="finished" from="Game/Conductor1" to="." method="_on_Conductor1_finished"]

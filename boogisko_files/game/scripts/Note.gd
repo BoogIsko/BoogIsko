@@ -4,10 +4,10 @@ const SPAWN_Y = -20
 const TARGET_Y = 631
 const DIST_TO_TARGET = TARGET_Y - SPAWN_Y
 
-const LEFT_SPAWN = Vector2(424, SPAWN_Y)
-const UP_SPAWN = Vector2(567, SPAWN_Y)
-const DOWN_SPAWN = Vector2(701, SPAWN_Y)
-const RIGHT_SPAWN = Vector2(842, SPAWN_Y)
+const LEFT_SPAWN = Vector2(166, SPAWN_Y)
+const UP_SPAWN = Vector2(305, SPAWN_Y)
+const DOWN_SPAWN = Vector2(444, SPAWN_Y)
+const RIGHT_SPAWN = Vector2(582, SPAWN_Y)
 
 var velocity = Vector2(0.0, 360.0)
 var label_vel = Vector2(0.0, 100.0)

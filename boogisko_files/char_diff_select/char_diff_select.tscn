@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://assets_new/diff_char_select/select_diff_char.png" type="Texture" id=1]
 [ext_resource path="res://char_diff_select/buttons/easy_btn.tscn" type="PackedScene" id=2]
@@ -12,22 +12,20 @@
 [ext_resource path="res://char_diff_select/male_option.tscn" type="PackedScene" id=10]
 [ext_resource path="res://char_diff_select/difficulty_button_group.tres" type="ButtonGroup" id=11]
 [ext_resource path="res://char_diff_select/char_button_group.tres" type="ButtonGroup" id=12]
+[ext_resource path="res://assets_new/character/Character Spritesheets/Char Select/male_unselected.png" type="Texture" id=13]
+[ext_resource path="res://assets_new/character/Character Spritesheets/Char Select/male_selected.png" type="Texture" id=14]
+[ext_resource path="res://assets_new/character/Character Spritesheets/Char Select/fem_unselected.png" type="Texture" id=15]
+[ext_resource path="res://assets_new/character/Character Spritesheets/Char Select/fem_selected.png" type="Texture" id=16]
 
 [node name="CharacterSelectScreen" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 8 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Background" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 9 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Headers" type="TextureRect" parent="."]
 margin_left = -61.0
@@ -58,9 +56,6 @@ margin_top = 127.0
 margin_right = 1229.0
 margin_bottom = 253.0
 custom_constants/separation = 38
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Easy" parent="Difficulties" instance=ExtResource( 2 )]
 margin_left = 0.0
@@ -88,20 +83,30 @@ group = ExtResource( 11 )
 
 [node name="Characters" type="HBoxContainer" parent="."]
 margin_left = 243.0
-margin_top = 383.0
-margin_right = 627.0
-margin_bottom = 728.0
+margin_top = 407.0
+margin_right = 1043.0
+margin_bottom = 598.0
 alignment = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Male" parent="Characters" instance=ExtResource( 10 )]
-margin_left = 96.0
-margin_right = 287.0
-margin_bottom = 345.0
+margin_left = 210.0
+margin_right = 395.0
+margin_bottom = 191.0
 toggle_mode = true
 group = ExtResource( 12 )
+texture_normal = ExtResource( 13 )
+texture_pressed = ExtResource( 14 )
+texture_hover = ExtResource( 14 )
+
+[node name="Female" type="TextureButton" parent="Characters"]
+margin_left = 399.0
+margin_right = 589.0
+margin_bottom = 191.0
+toggle_mode = true
+group = ExtResource( 12 )
+texture_normal = ExtResource( 15 )
+texture_pressed = ExtResource( 16 )
+texture_hover = ExtResource( 16 )
 
 [node name="Start" parent="." instance=ExtResource( 7 )]
 margin_left = 460.0
@@ -114,4 +119,5 @@ margin_bottom = 704.0
 [connection signal="toggled" from="Difficulties/Medium" to="." method="_on_Medium_toggled"]
 [connection signal="toggled" from="Difficulties/Hard" to="." method="_on_Hard_toggled"]
 [connection signal="toggled" from="Characters/Male" to="." method="_on_Male_toggled"]
+[connection signal="toggled" from="Characters/Female" to="." method="_on_Female_toggled"]
 [connection signal="pressed" from="Start" to="." method="_on_Start_pressed"]

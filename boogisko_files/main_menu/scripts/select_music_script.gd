@@ -13,7 +13,6 @@ func _on_Sunny_pressed():
 	PlayerData.song = "sunny"
 	change_scene()
 
-
 func _on_Smile_pressed():
 	PlayerData.song = "smile"
 	change_scene()

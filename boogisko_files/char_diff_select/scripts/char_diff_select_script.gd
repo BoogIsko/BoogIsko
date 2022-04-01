@@ -44,3 +44,8 @@ func _on_Male_toggled(button_pressed):
 	if (button_pressed):
 		PlayerData.character = "male"
 		char_selected = true
+
+func _on_Female_toggled(button_pressed):
+	if (button_pressed):
+		PlayerData.character = "female"
+		char_selected = true
