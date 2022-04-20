@@ -57,4 +57,4 @@ func destroy(score):
 
 
 func _on_Timer_timeout():
-	queue_free()
+	$Node2D/Status.text = ""

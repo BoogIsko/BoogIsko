@@ -6,15 +6,32 @@ var note = load("res://game/Note.tscn")
 var instance
 var song_position_in_beats = 0
 var spawn_beat = 1
+var diff_choice = PlayerData.difficulty
 
 func _ready() -> void:
+	get_tree().paused = false
 	var song_choice = PlayerData.song
+	var bpm
+	var beat_offsets = [4, 2, 3]
+	
+	if diff_choice == "easy":
+		bpm = 60
+	elif diff_choice == "medium":
+		bpm = 120
+		beat_offsets[0] = 5
+		beat_offsets[2] = 5
+	elif diff_choice == "hard":
+		bpm = 160
+		beat_offsets[0] = 7
+		beat_offsets[1] = 1
+		beat_offsets[2] = 5
+	
 	if song_choice == "sunny":
-		$Conductor1.play_with_beat_offset(4, 60)
+		$Conductor1.play_with_beat_offset(beat_offsets[0], bpm)
 	elif song_choice == "smile":
-		$Conductor2.play_with_beat_offset(2, 60)
+		$Conductor2.play_with_beat_offset(beat_offsets[1], bpm)
 	elif song_choice == "bliss":
-		$Conductor3.play_with_beat_offset(3, 60)
+		$Conductor3.play_with_beat_offset(beat_offsets[2], bpm)
 	else:
 		print("Error in song selection")
 
@@ -32,7 +49,11 @@ func _spawn_notes(spawn):
 
 func _on_Conductor1_beat(position):
 	song_position_in_beats = position
-	if song_position_in_beats > 130:
+	if song_position_in_beats > 130 and diff_choice == "easy":
+		spawn_beat = 0
+	elif song_position_in_beats > 257 and diff_choice == "medium":
+		spawn_beat = 0
+	elif song_position_in_beats > 344 and diff_choice == "hard":
 		spawn_beat = 0
 
 
@@ -42,7 +63,11 @@ func _on_Conductor1_measure(position):
 
 func _on_Conductor2_beat2(position):
 	song_position_in_beats = position
-	if song_position_in_beats > 194:
+	if song_position_in_beats > 194 and diff_choice == "easy":
+		spawn_beat = 0
+	elif song_position_in_beats > 386 and diff_choice == "medium":
+		spawn_beat = 0
+	elif song_position_in_beats > 512 and diff_choice == "hard":
 		spawn_beat = 0
 
 
@@ -52,7 +77,11 @@ func _on_Conductor2_measure2(position):
 
 func _on_Conductor3_beat3(position):
 	song_position_in_beats = position
-	if song_position_in_beats > 203:
+	if song_position_in_beats > 203 and diff_choice == "easy":
+		spawn_beat = 0
+	elif song_position_in_beats > 408 and diff_choice == "medium":
+		spawn_beat = 0
+	elif song_position_in_beats > 538 and diff_choice == "hard":
 		spawn_beat = 0
 
 

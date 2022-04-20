@@ -15,3 +15,8 @@ func _on_Quit_pressed():
 	visible = false
 	if get_tree().change_scene('res://main_menu/main_menu.tscn') != OK:
 		print('ERROR: Faulty target scene')
+
+
+func _on_Restart_pressed():
+	if get_tree().change_scene('res://game_screen/game_screen.tscn') != OK:
+		print('ERROR: Faulty target scene')

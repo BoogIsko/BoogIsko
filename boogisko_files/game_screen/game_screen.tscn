@@ -210,4 +210,5 @@ position = Vector2( -99, 28 )
 [connection signal="finished" from="Game/Conductor3" to="." method="_on_Conductor3_finished"]
 [connection signal="measure3" from="Game/Conductor3" to="Game" method="_on_Conductor3_measure3"]
 [connection signal="pressed" from="PauseLayer/Pause/Buttons/Resume" to="PauseLayer/Pause" method="_on_Resume_pressed"]
+[connection signal="pressed" from="PauseLayer/Pause/Buttons/Restart" to="PauseLayer/Pause" method="_on_Restart_pressed"]
 [connection signal="pressed" from="PauseLayer/Pause/Buttons/Quit" to="PauseLayer/Pause" method="_on_Quit_pressed"]
