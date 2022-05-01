@@ -16,7 +16,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 11.5, 10.5 )
+extents = Vector2( 9, 7.5 )
 
 [sub_resource type="DynamicFont" id=3]
 font_data = ExtResource( 6 )

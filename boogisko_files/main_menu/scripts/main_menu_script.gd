@@ -5,6 +5,10 @@ func _ready():
 	PlayerData.difficulty = "none"
 	PlayerData.character = "none"
 	PlayerData.song = "none"
+	PlayerData.song_score = "none"
+	PlayerData.idx = 0
+	PlayerData.score = 0
+	
 
 func _on_Exit_pressed():
 	get_tree().quit()
