@@ -10,9 +10,6 @@
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 5 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="bg" type="TextureRect" parent="."]
 margin_right = 40.0
@@ -28,9 +25,6 @@ margin_top = -73.0
 margin_right = 2042.0
 margin_bottom = 1069.0
 texture = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="back" type="TextureButton" parent="."]
 margin_left = 565.0
@@ -43,5 +37,35 @@ texture_hover = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Score1" type="Label" parent="."]
+margin_left = 484.0
+margin_top = 155.0
+margin_right = 584.0
+margin_bottom = 180.0
+rect_scale = Vector2( 3, 3 )
+size_flags_horizontal = 3
+size_flags_vertical = 6
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "jkjkh"
+percent_visible = -0.2
+
+[node name="Score2" type="Label" parent="."]
+margin_left = 484.0
+margin_top = 255.0
+margin_right = 584.0
+margin_bottom = 280.0
+rect_scale = Vector2( 3, 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "rwr"
+
+[node name="Score3" type="Label" parent="."]
+margin_left = 484.0
+margin_top = 355.0
+margin_right = 584.0
+margin_bottom = 380.0
+rect_scale = Vector2( 3, 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "eew"
 
 [connection signal="pressed" from="back" to="." method="_on_back_pressed"]
