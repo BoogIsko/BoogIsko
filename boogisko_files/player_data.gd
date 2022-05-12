@@ -9,11 +9,20 @@ var song_score: String = "none"
 var idx := 0  # This denotes index that will be replaced
 			  # For easier time when updating scores
 var score := 0 # Temporarily holds score of a game
-var sunny_scores = [0, 0, 0]
-var smile_scores = [0, 0, 0]
-var bliss_scores = [0, 0, 0]
 
-# Player names; indices denote rank similar to the scores
-var sunny_players = ["", "", ""]
-var smile_players = ["", "", ""]
-var bliss_players = ["", "", ""]
+var player_data_scores = {
+	"sunny" : {
+		"names" : ["AAA", "AAA", "AAA"],
+		"scores" : [0,0,0]
+	},
+	
+	"smile" : {
+		"names" : ["AAA", "AAA", "AAA"],
+		"scores" : [0,0,0]		
+	},
+	
+	"bliss" : {
+		"names" : ["AAA", "AAA", "AAA"],
+		"scores" : [0,0,0]
+	}
+}
