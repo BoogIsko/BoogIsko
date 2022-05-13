@@ -21,7 +21,6 @@ config/icon="res://icon.png"
 [autoload]
 
 PlayerData="*res://player_data.gd"
-SilentWolf="*res://addons/silent_wolf/SilentWolf.gd"
 
 [display]
 

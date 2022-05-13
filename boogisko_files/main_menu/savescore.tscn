@@ -1,10 +1,23 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://game_screen/buttons/quit_btn.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/others/m04b.TTF" type="DynamicFontData" id=2]
 [ext_resource path="res://assets/others/m04.TTF" type="DynamicFontData" id=3]
-[ext_resource path="res://assets_new/view_score/viewscore_bg.png" type="Texture" id=4]
+[ext_resource path="res://assets_new/game_screen/gamescreen3.png" type="Texture" id=4]
 [ext_resource path="res://main_menu/scripts/savescore.gd" type="Script" id=5]
+[ext_resource path="res://assets_new/game_screen/gamescreen2.png" type="Texture" id=6]
+[ext_resource path="res://assets_new/game_screen/gamescreen6.png" type="Texture" id=7]
+[ext_resource path="res://assets_new/game_screen/gamescreen1.png" type="Texture" id=8]
+[ext_resource path="res://assets_new/game_screen/gamescreen5.png" type="Texture" id=9]
+[ext_resource path="res://assets_new/game_screen/gamescreen4.png" type="Texture" id=10]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 4 ), ExtResource( 10 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "default",
+"speed": 1.0
+} ]
 
 [sub_resource type="DynamicFont" id=1]
 size = 45
@@ -19,10 +32,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 5 )
 
-[node name="TextureRect" type="TextureRect" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
-texture = ExtResource( 4 )
+[node name="bg" type="AnimatedSprite" parent="."]
+frames = SubResource( 3 )
+frame = 3
+playing = true
+centered = false
 
 [node name="highscore" type="Label" parent="."]
 margin_left = 304.0

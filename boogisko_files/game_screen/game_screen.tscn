@@ -1,6 +1,6 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=41 format=2]
 
-[ext_resource path="res://assets_new/game_screen/bg.png" type="Texture" id=1]
+[ext_resource path="res://assets_new/game_screen/gamescreen3.png" type="Texture" id=1]
 [ext_resource path="res://game_screen/scripts/game_screen.gd" type="Script" id=2]
 [ext_resource path="res://game_screen/scripts/pause_menu.gd" type="Script" id=3]
 [ext_resource path="res://assets/main/game_paused.png" type="Texture" id=4]
@@ -29,6 +29,19 @@
 [ext_resource path="res://assets_new/game_screen/spotlights.png" type="Texture" id=27]
 [ext_resource path="res://assets_new/game_screen/discoball.png" type="Texture" id=28]
 [ext_resource path="res://game/Char.tscn" type="PackedScene" id=29]
+[ext_resource path="res://assets_new/game_screen/gamescreen2.png" type="Texture" id=30]
+[ext_resource path="res://assets_new/game_screen/gamescreen6.png" type="Texture" id=31]
+[ext_resource path="res://assets_new/game_screen/gamescreen1.png" type="Texture" id=32]
+[ext_resource path="res://assets_new/game_screen/gamescreen5.png" type="Texture" id=33]
+[ext_resource path="res://assets_new/game_screen/gamescreen4.png" type="Texture" id=34]
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ ExtResource( 32 ), ExtResource( 33 ), ExtResource( 1 ), ExtResource( 34 ), ExtResource( 30 ), ExtResource( 31 ) ],
+"loop": true,
+"name": "default",
+"speed": 1.0
+} ]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -71,9 +84,10 @@ script = ExtResource( 2 )
 [node name="Game" type="Node2D" parent="."]
 script = ExtResource( 8 )
 
-[node name="Bg" type="Sprite" parent="Game"]
+[node name="Bg" type="AnimatedSprite" parent="Game"]
 position = Vector2( 640.5, 361 )
-texture = ExtResource( 1 )
+frames = SubResource( 6 )
+playing = true
 
 [node name="BG REFERENCE" type="TextureRect" parent="Game"]
 visible = false
