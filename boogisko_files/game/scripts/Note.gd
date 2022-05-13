@@ -14,7 +14,7 @@ var label_vel = Vector2(0.0, 100.0)
 var hit = false
 
 func _ready() -> void:
-	pass
+	$Node2D/AnimatedSprite.visible = false
 
 func _physics_process(delta: float) -> void:
 	if !hit:
@@ -29,23 +29,28 @@ func initialize(lane):
 	# Left Arrow
 	if lane == 0:
 		$AnimatedSprite.frame = 0
+		$Node2D/AnimatedSprite.animation = "arrow_0_left"
 		position = LEFT_SPAWN
 	# Up Arrow
 	if lane == 1:
 		$AnimatedSprite.frame = 1
+		$Node2D/AnimatedSprite.animation = "arrow_1_up"
 		position = UP_SPAWN
 	# Down Arrow
 	if lane == 2:
 		$AnimatedSprite.frame = 2
+		$Node2D/AnimatedSprite.animation = "arrow_2_down"
 		position = DOWN_SPAWN
 	# Right Arrow
 	if lane == 3:
 		$AnimatedSprite.frame = 3
+		$Node2D/AnimatedSprite.animation = "arrow_3_right"
 		position = RIGHT_SPAWN
-		
 
 func destroy(score):
 	$AnimatedSprite.visible = false
+	$Node2D/AnimatedSprite.visible = true
+	$Node2D/AnimatedSprite.play()
 	$Timer.start()
 	hit = true
 	if score == 3:
@@ -57,4 +62,6 @@ func destroy(score):
 
 
 func _on_Timer_timeout():
-	$Node2D/Status.text = ""
+#	$Node2D/Status.text = ""
+#	$Node2D/AnimatedSprite.visible = false
+	queue_free()
