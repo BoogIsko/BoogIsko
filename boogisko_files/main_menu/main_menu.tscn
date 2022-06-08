@@ -32,7 +32,7 @@ script = ExtResource( 7 )
 
 [node name="Background" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
-frame = 1
+frame = 2
 playing = true
 centered = false
 
