@@ -11,9 +11,9 @@ RAZAL, Cassandra
 
 **BoogIsko** is a simple rhythm game where you time arrow key presses to increase your score similar to *Dance Dance Revolution* \(except you don't have to stand up and jump around for this one\). 
 
-**In-game Screenshots:**
-![Main Menu](./screenshots/sc1.jpg)
+**In-game Screenshots:**<br>
+![Main Menu](./screenshots/sc1.jpg)<br>
 
-![Selection Screen](./screenshots/sc2.jpg)
+![Selection Screen](./screenshots/sc2.jpg)<br>
 
 ![Gameplay](./screenshots/sc3.jpg)
