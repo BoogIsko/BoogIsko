@@ -8,3 +8,5 @@ CRISOSTOMO, Lhee
 CUNANAN, Ridge
 JUDAL, Denver
 RAZAL, Cassandra
+
+**BoogIsko** is a simple rhythm game where you time arrow key presses to increase your score similar to *Dance Dance Revolution* \(except you don't have to stand up and jump around for this one\). 
